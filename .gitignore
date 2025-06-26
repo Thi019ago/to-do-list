@@ -1,0 +1,12 @@
+# Ignorar node_modules (dependências)
+node_modules/
+
+# Ignorar arquivos de ambiente
+.env
+
+# Ignorar arquivos de build
+dist/
+
+# Cache do editor
+.vscode/
+*.log
