@@ -29,3 +29,4 @@ export const login = async (email: string, password: string) => {
 function generateToken(userId: string) {
   return jwt.sign({ userId }, JWT_SECRET, { expiresIn: "2h" });
 };
+
