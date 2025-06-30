@@ -31,3 +31,20 @@ export const createTask = async(req:AuthenticatedRequest,res:Response)=>{
         res.status(400).json({error:err.message});
     }
 };
+
+//buscar todas as tarefas do usuario
+
+export const getTasks = async(req:AuthenticatedRequest,res:Response)=>{
+    try{
+        const userId = req.user?.id;
+        const tasks = await Task.find({user:userId}).sort({createdAt:-1});
+        res.status(200).json(tasks);
+    }catch(err:any){
+        res.status(500).json({error:err.message});
+    }
+};
+
+
+
+
+
