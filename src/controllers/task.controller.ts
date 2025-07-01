@@ -81,6 +81,18 @@ export const updateTask = async(req:AuthenticatedRequest,res:Response)=>{
     }
 };
 
+//deletar tarefa
+
+
+
+
+
+
+
+
+//alternar status da tarefa (conluida/pendente)
+
+
 
 
 
