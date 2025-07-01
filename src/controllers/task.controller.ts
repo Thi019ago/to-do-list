@@ -12,6 +12,7 @@ interface AuthenticatedRequest extends Request{
 
 
 //criar nova tarefa
+
 export const createTask = async(req:AuthenticatedRequest,res:Response)=>{
     try{
         const{title,description,priority,dueDate}=req.body;
@@ -41,6 +42,42 @@ export const getTasks = async(req:AuthenticatedRequest,res:Response)=>{
         res.status(200).json(tasks);
     }catch(err:any){
         res.status(500).json({error:err.message});
+    }
+};
+
+//buscar uma tarefa especifica
+
+export const getTaskById = async(req:AuthenticatedRequest,res:Response)=>{
+    try{
+        const {id}=req.params;
+        const userId =req.user?.id;
+
+        const task = await Task.findOne({_id:id,user:userId})
+
+        if (!task){
+            return res.status(404).json({error:"Tarefa não encontrada"})
+        }
+        res.status(200).json(task);
+    
+    }catch(err:any){
+        res.status(500).json({error:err.message});
+    }
+};
+
+ //atualizar tarefa
+export const updateTask = async(req:AuthenticatedRequest,res:Response)=>{
+    try{
+        const {id}=req.params;
+        const userId = req.user?.id;
+        const updates = req.body;
+
+        const task = await Task.findOneAndUpdate({_id:id,user: userId},updates,{new:true});
+        if(!task){
+            return res.status(404).json({error:"Tarefa não encontrada"})
+        }
+        res.status(200).json(task);
+    }catch(err:any){
+        res.status(500).json({error:err.message})
     }
 };
 
