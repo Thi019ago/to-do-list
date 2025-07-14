@@ -1,10 +1,10 @@
 {
   "compilerOptions": {
-    "target": "es2017",              // Código JS moderno, compatível com Node atual
-    "module": "commonjs",            // Formato usado no Node.js
-    "rootDir": "./src",              // Onde estão os arquivos de código
-    "outDir": "./dist",              // Onde será gerado o JavaScript compilado
-    "strict": true,                  // Regras de tipagem mais seguras
-    "esModuleInterop": true          // Permite importar libs com `import express from 'express'`
+    "target": "es2017", // Código JS moderno, compatível com Node atual
+    "module": "commonjs", // Formato usado no Node.js
+    "rootDir": "./src", // Onde estão os arquivos de código
+    "outDir": "./dist", // Onde será gerado o JavaScript compilado
+    "strict": true, // Regras de tipagem mais seguras
+    "esModuleInterop": true // Permite importar libs com `import express from 'express'`
   }
 }
