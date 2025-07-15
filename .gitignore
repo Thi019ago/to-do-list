@@ -1,12 +1,21 @@
-# Ignorar node_modules (dependências)
+# Node.js
 node_modules/
-
-# Ignorar arquivos de ambiente
+dist/
 .env
 
-# Ignorar arquivos de build
-dist/
+# Vite/React build
+frontend/dist/
 
-# Cache do editor
-.vscode/
+# TypeScript
+*.tsbuildinfo
+
+# Logs
 *.log
+
+# IDEs
+.vscode/
+.idea/
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
