@@ -19,3 +19,7 @@ frontend/dist/
 # Sistema operacional
 .DS_Store
 Thumbs.db
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
